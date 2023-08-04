@@ -1,9 +1,10 @@
 import React, { createContext } from 'react';
+export const AuthContext=createContext();
 
 const UserContex = ({children}) => {
-    const AuthContext=createContext();
 
-    const user={dispalyName:'munir'}
+
+     const user={dispalyName:'munir'}
 
   const authinfo={user};
 
