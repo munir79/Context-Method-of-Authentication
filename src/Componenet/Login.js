@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../Contex/UserContex';
 
 const Login = () => {
+    const {login}=useContext(AuthContext);
+    console.log(login);
 
     const handlLogin =(event)=>{
         event.preventDefault();
@@ -9,6 +12,14 @@ const Login = () => {
         const email=form.email.value;
         const password=form.password.value;
         console.log( email,password);
+        login(email,password)
+        .then(result=>{
+            const user=result.user;
+            console.log(user);
+        })
+        .catch(error=>{
+            console.log('error:',error);
+        })
     }
     return (
         <div>
